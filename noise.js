@@ -2,6 +2,9 @@
 
 var fs = require('fs');
 var util = require('util');
+
+/*
+these lines are for testing purposes
 var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'w'});
 var log_stdout = process.stdout;
 
@@ -9,7 +12,7 @@ console.log = function(d) { //
   log_file.write(util.format(d) + '\n');
   log_stdout.write(util.format(d) + '\n');
 };
-
+*/
 
 /*
 helper methods
@@ -18,8 +21,7 @@ helper methods
 
 const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))));
 
-//input lists
-//output product of lists like [0,1],[0,1] => [ [0,0],[0,1],[1,0],[1,1] ] 
+//gives cartesian product of input lists
 const cartesian = (a, b, ...c) => (b ? cartesian(f(a, b), ...c) : a);
 
 //dot product of two javascript arrays
@@ -32,7 +34,7 @@ const dotProduct = (xs, ys) => {
     }
  
 
-// zipWith :: (a -> b -> c) -> [a] -> [b] -> [c]
+// zip function as in python zip
 const zipWith = (f, xs, ys) => {
     const ny = ys.length;
     return (xs.length <= ny ? xs : xs.slice(0, ny))
@@ -189,7 +191,7 @@ class Perlin{
 		return ret
 	}
 }
-exports.Perlin=Perlin
+module.exports=Perlin
 /*
 }
 for(var i=0; i<100; i++){

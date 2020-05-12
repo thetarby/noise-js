@@ -8,8 +8,8 @@ You can generate noise with any number of dimensions. Initialize Perlin object w
 you want to sample and octave count. Octave count is one as default. Then call 'call' method of the object
 with the coordinates. Coordinates dimension number must be same with the one you gave to constructor.
 ```jsx
-var per=require('n-dimensional-noise')
-let p=new per.Perlin(2,5)
+var noise=require('n-dimensional-noise')
+let p=new noise.Perlin(2,5)
 
 console.log(p.call([0.5,0.5]))
 console.log(p.call([0.5,0.81]))
