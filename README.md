@@ -11,7 +11,7 @@ npm i n-dimensional-noise
 ## Usage
 You can generate noise with any number of dimensions. Initialize Perlin object with the number of dimensions 
 you want to sample and octave count. Octave count is one as default. Then call 'call' method of the object
-with the coordinates. Coordinates dimension number must be same with the one you gave to constructor.
+with the coordinates. Coordinates dimension number must be same with the one you gave to constructor. Perlin noise returns values ranging from -1 to 1. 
 ```jsx
 var noise=require('n-dimensional-noise')
 let p=new noise.Perlin(2,5)
@@ -29,7 +29,7 @@ console.log(JSON.stringify(arr))
 
 ```
 
-If you want to generate worley noise;
+You can generate worley noise too. Worley noise's range of output values is not determined since numberOfSeedPoints and dimension number affects it but it is for sure between 0 and 1.
 ```jsx
 //dim is the number of dimensions numberOfSeedPoints is the number of sampled points in worley noise. Its default is 100.
 let w=new noise.Worley({dim:3, numberOfSeedPoints:1000})
