@@ -2,6 +2,11 @@
 
 > n-dimensional perlin noise generator implementation with JavaScript
 
+## Install
+
+```bash
+npm i n-dimensional-noise
+```
 
 ## Usage
 You can generate noise with any number of dimensions. Initialize Perlin object with the number of dimensions 
