@@ -1,7 +1,7 @@
 {
   "name": "n-dimensional-noise",
-  "version": "1.0.0",
-  "description": "n dimensional perlin noise generator",
+  "version": "1.0.1",
+  "description": "n dimensional noise generator",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

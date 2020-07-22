@@ -1,19 +1,5 @@
 'use strict'; 
 
-var fs = require('fs');
-var util = require('util');
-
-/*
-these lines are for testing purposes
-var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'w'});
-var log_stdout = process.stdout;
-
-console.log = function(d) { //
-  log_file.write(util.format(d) + '\n');
-  log_stdout.write(util.format(d) + '\n');
-};
-*/
-
 /*
 helper methods
 */
@@ -71,7 +57,7 @@ class Grid{
 	*/
 	get(key){
 		if ( !(key in this.grid) ){
-			//if gradient is not calculated for the given key before, generate it and put to grid
+			//if gradient is not calculated for the given key before, generate it and put it to grid
 			var point=[]
 			Array.from({length: this.dim}, (x,i) => point.push( Math.random()*2-1 ));
 			
