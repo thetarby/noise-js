@@ -22,17 +22,40 @@ console.log(p.call([0.5,0.81]))
 let arr=Array(100).fill().map(() => Array(100).fill(0));
 for(var i=0; i<100; i++){
 	for(var j=0; j<100; j++){
-		//console.log(i/50 +', ' +j/50+ ', '+p.sample([i/50,j/50]))
 		arr[i][j]=p.call([i/20,j/20])
 	}
 }
 console.log(JSON.stringify(arr))
 
 ```
+
+If you want to generate worley noise;
+```jsx
+//dim is the number of dimensions numberOfSeedPoints is the number of sampled points in worley noise. Its default is 100.
+let w=new noise.Worley({dim:3, numberOfSeedPoints:1000})
+
+
+let arr=Array(100).fill().map(() => Array(100).fill().map(() => Array(100).fill(0)));
+for(var i=0; i<100; i++){
+	for(var j=0; j<100; j++){
+		for(var k=0; k<100; k++){
+			arr[i][j][k]=w.call(i/100,j/100,k/100)
+		}
+	}
+}
+console.log(JSON.stringify(arr))
+
+```
+
 ## Demo
 A sampled noise of 500x500 with octave count 5.
 
 ![img](https://i.ibb.co/CMY5GTR/noise.jpg)
+
+A sampled 3d worley noise as gif. Third dimension is used as time.
+
+![gif](https://i.ibb.co/3NLpDrM/ezgif-com-optimize.gif)
+
 ## License
 
 MIT © [thetarby](https://github.com/thetarby)
